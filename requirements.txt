@@ -17,11 +17,12 @@ blinker==1.8.2
 boto==2.49.0
 boto3 @ file:///home/conda/feedstock_root/build_artifacts/boto3_1602286028824/work
 botocore @ file:///home/conda/feedstock_root/build_artifacts/botocore_1602283502973/work
+Bottleneck @ file:///C:/b/abs_f05kqh7yvj/croot/bottleneck_1707864273291/work
 branca @ file:///home/conda/feedstock_root/build_artifacts/branca_1588860304135/work
 brotlipy @ file:///D:/bld/brotlipy_1636012381660/work
 bz2file==0.98
 cachetools @ file:///home/conda/feedstock_root/build_artifacts/cachetools_1593420445823/work
-certifi==2024.8.30
+certifi @ file:///C:/b/abs_1fw_exq1si/croot/certifi_1725551736618/work/certifi
 cffi @ file:///D:/bld/cffi_1602537433319/work
 cftime @ file:///D:/bld/cftime_1602504633284/work
 chardet @ file:///D:/bld/chardet_1602255508636/work
@@ -116,6 +117,7 @@ netCDF4 @ file:///D:/bld/netcdf4_1602508775664/work
 networkx @ file:///home/conda/feedstock_root/build_artifacts/networkx_1617499744980/work
 nltk @ file:///home/conda/feedstock_root/build_artifacts/nltk_1616505766995/work
 notebook @ file:///D:/bld/notebook_1602720408675/work
+numexpr @ file:///C:/ci/numexpr_1614798525447/work
 numpy==1.21.2
 oauthlib==3.1.0
 olefile @ file:///home/conda/feedstock_root/build_artifacts/olefile_1602866521163/work
@@ -124,7 +126,7 @@ opt-einsum==3.3.0
 orc==0.1.0
 osqp==0.6.1
 packaging==24.2
-pandas @ file:///D:/bld/pandas_1603237198458/work
+pandas @ file:///C:/b/abs_cdcgk91igc/croots/recipe/pandas_1663772960432/work
 pandasql @ file:///home/conda/feedstock_root/build_artifacts/pandasql_1623699966879/work
 pandocfilters==1.4.2
 parso==0.7.0
