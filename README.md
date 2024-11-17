@@ -93,7 +93,7 @@ RFM-Analysis/ │ ├── data/ │ └── retail_data.csv # Input dataset 
 
 4. Run the analysis script:
 
-bash
+   ```bash
    python src/rfm_analysis.py
 5. Check the output directory for results and visualizations.
 
