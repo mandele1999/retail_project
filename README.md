@@ -79,6 +79,7 @@ The dataset includes the following key features:
 ## **Files and Directory Structure**
 
 ```grapql
+
 RFM-Analysis/
 │
 ├── data/
@@ -95,6 +96,7 @@ RFM-Analysis/
 │
 ├── README.md                          # Project overview and instructions
 └── requirements.txt                   # List of required libraries
+```
 
 ---
 
