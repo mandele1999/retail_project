@@ -78,6 +78,7 @@ The dataset includes the following key features:
 
 ## **Files and Directory Structure**
 
+```grapql
 RFM-Analysis/
 │
 ├── data/
