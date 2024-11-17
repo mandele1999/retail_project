@@ -78,7 +78,22 @@ The dataset includes the following key features:
 
 ## **Files and Directory Structure**
 
-RFM-Analysis/ │ ├── data/ │ └── retail_data.csv # Input dataset │ ├── src/ │ ├── rfm_analysis.py # Main RFM analysis script │ ├── data_preprocessing.py # Data cleaning and preprocessing script │ └── visualization.py # Visualization functions │ ├── output/ │ ├── rfm_analysis_results.csv # Final RFM table with segments │ └── plots/ # Generated plots │ ├── README.md # Project overview and instructions └── requirements.txt # List of required libraries
+RFM-Analysis/
+│
+├── data/
+│   └── retail_data.csv                # Input dataset
+│
+├── src/
+│   ├── rfm_analysis.py                # Main RFM analysis script
+│   ├── data_preprocessing.py          # Data cleaning and preprocessing script
+│   └── visualization.py               # Visualization functions
+│
+├── output/
+│   ├── rfm_analysis_results.csv       # Final RFM table with segments
+│   └── plots/                         # Generated plots
+│
+├── README.md                          # Project overview and instructions
+└── requirements.txt                   # List of required libraries
 
 ---
 
