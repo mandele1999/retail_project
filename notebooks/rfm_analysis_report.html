@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RFM Analysis Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #4CAF50; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        img { display: block; margin: 20px auto; max-width: 800px; width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <h1>RFM Analysis Report</h1>
+    
+    <h2>Revenue Contribution by Segment</h2>
+    <table>
+        <tr>
+            <th>Segment</th>
+            <th>Total Revenue</th>
+            <th>Revenue Percentage</th>
+        </tr>
+        
+        <tr>
+            <td>Champions</td>
+            <td>$6255336.53</td>
+            <td>70.19%</td>
+        </tr>
+        
+        <tr>
+            <td>Loyal Customers</td>
+            <td>$1408629.91</td>
+            <td>15.81%</td>
+        </tr>
+        
+        <tr>
+            <td>Potential Loyalists</td>
+            <td>$882612.66</td>
+            <td>9.9%</td>
+        </tr>
+        
+        <tr>
+            <td>At Risk</td>
+            <td>$259877.89</td>
+            <td>2.92%</td>
+        </tr>
+        
+        <tr>
+            <td>Hibernating</td>
+            <td>$104950.91</td>
+            <td>1.18%</td>
+        </tr>
+        
+    </table>
+    
+    <h2>Revenue Contribution Visualization</h2>
+    <img src="../images/revenue_contribution.png" alt="Revenue Contribution Plot">
+    
+    <h2>Customer Segments Distribution</h2>
+    <img src="../images/rfm_segments_comparison.png" alt="Customer Segments Distribution Plot">
+
+    <h2>Value Segment Distribution</h2>
+    <img src="../images/rfm_value_segment_dist.png" alt="Value Segment Distribution Plot">
+
+    <h2>Average RFM Scores Across Customer Segments</h2>
+    <img src="../images/rfm_comparisons.png" alt="Average RFM Scores by Segment Plot">
+    
+    <h2>Customer Proportion vs Revenue Contribution Proportion</h2>
+    <pre>+---------------------+-----------------------+------------------------+
+| Segment             | Customer Proportion   | Revenue Contribution   |
++=====================+=======================+========================+
+| Champions           | 25.13%                | 70.19%                 |
++---------------------+-----------------------+------------------------+
+| Loyal Customers     | 27.14%                | 15.81%                 |
++---------------------+-----------------------+------------------------+
+| Potential Loyalists | 29.35%                | 9.90%                  |
++---------------------+-----------------------+------------------------+
+| At Risk             | 20.45%                | 2.92%                  |
++---------------------+-----------------------+------------------------+
+| Hibernating         | 14.68%                | 1.18%                  |
++---------------------+-----------------------+------------------------+</pre>
+
+
+    <h2>Recommendations</h2>
+    <ul>
+        
+        <li>Strengthening relationships with champions: Focus on retention strategies like exclusive loyalty programs, early access to products, or premium services. Ensure consistent and personalized communicatio  to maintain their satisfaction and speding levels.</li>
+        
+        <li>Nurture loyal customers and potential loyalists: Create targeted campaigns to increase engagement, such as offering tiered rewards for higher spending or incentivizing frequent purchases. Educate these customers about additional products/services to encourage upselling and cross-selling</li>
+        
+        <li>Re-engage At Risk customers: Deploy win-back campaigns, including special offers, personalized outreach, or feedback collection to understand their disengagement. Focus on reactivating high-value customers within this segment.</li>
+        
+        <li>Optimize efforts for hibernating customers: Periodic reminders or seasonal promotions can re-engage this group, but prioritize resources on higher-value segments.</li>
+        
+        <li>Monitor and track performance: Regularly update RFM scores and revenue contributions to identify changes in customer behavior. Use these insights to refine marketing and operational strategies</li>
+        
+    </ul>
+</body>
+</html>
