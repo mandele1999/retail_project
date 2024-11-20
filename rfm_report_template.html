@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RFM Analysis Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #4CAF50; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        img { display: block; margin: 20px auto; max-width: 800px; width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <h1>RFM Analysis Report</h1>
+    
+    <h2>Revenue Contribution by Segment</h2>
+    <table>
+        <tr>
+            <th>Segment</th>
+            <th>Total Revenue</th>
+            <th>Revenue Percentage</th>
+        </tr>
+        {% for row in segment_revenue %}
+        <tr>
+            <td>{{ row['RFM Customer Segment'] }}</td>
+            <td>${{ row['Total Revenue'] }}</td>
+            <td>{{ row['Revenue Percentage'] }}%</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <h2>Revenue Contribution Visualization</h2>
+    <img src="{{ plot_revenue }}" alt="Revenue Contribution Plot">
+    
+    <h2>Customer Segments Distribution</h2>
+    <img src="{{ plot_segments }}" alt="Customer Segments Distribution Plot">
+
+    <h2>Value Segment Distribution</h2>
+    <img src="{{plot_value_segments}}" alt="Value Segment Distribution Plot">
+
+    <h2>Average RFM Scores Across Customer Segments</h2>
+    <img src="{{plot_rfm_comparison}}" alt="Average RFM Scores by Segment Plot">
+    
+    <h2>Customer Proportion vs Revenue Contribution Proportion</h2>
+    <pre>{{ customer_table }}</pre>
+
+
+    <h2>Recommendations</h2>
+    <ul>
+        {% for recommendation in recommendations %}
+        <li>{{ recommendation }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
