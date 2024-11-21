@@ -1,4 +1,5 @@
 absl-py==0.10.0
+aiodns==3.2.0
 aiohttp @ file:///D:/bld/aiohttp_1603223723068/work
 altair==5.4.1
 annotated-types==0.7.0
@@ -22,6 +23,7 @@ branca @ file:///home/conda/feedstock_root/build_artifacts/branca_1588860304135/
 brotlipy @ file:///D:/bld/brotlipy_1636012381660/work
 bz2file==0.98
 cachetools @ file:///home/conda/feedstock_root/build_artifacts/cachetools_1593420445823/work
+ccxt==4.4.32
 certifi @ file:///C:/b/abs_1fw_exq1si/croot/certifi_1725551736618/work/certifi
 cffi @ file:///D:/bld/cffi_1602537433319/work
 cftime @ file:///D:/bld/cftime_1602504633284/work
@@ -112,6 +114,7 @@ narwhals==1.8.0
 nbclient @ file:///home/conda/feedstock_root/build_artifacts/nbclient_1602859080374/work
 nbconvert @ file:///D:/bld/nbconvert_1605402041690/work
 nbformat @ file:///home/conda/feedstock_root/build_artifacts/nbformat_1602732862338/work
+nbstripout==0.8.1
 nest-asyncio @ file:///home/conda/feedstock_root/build_artifacts/nest-asyncio_1601342677072/work
 netCDF4 @ file:///D:/bld/netcdf4_1602508775664/work
 networkx @ file:///home/conda/feedstock_root/build_artifacts/networkx_1617499744980/work
@@ -138,6 +141,7 @@ plotly @ file:///home/conda/feedstock_root/build_artifacts/plotly_1601563174572/
 pmdarima==2.0.4
 prometheus-client @ file:///home/conda/feedstock_root/build_artifacts/prometheus_client_1590412252446/work
 prompt-toolkit @ file:///home/conda/feedstock_root/build_artifacts/prompt-toolkit_1605053337398/work
+propcache==0.2.0
 protobuf==5.28.0
 psutil==6.1.0
 ptyprocess==0.6.0
@@ -146,6 +150,7 @@ pyarrow==0.15.1
 pyasn1==0.4.8
 pyasn1-modules==0.2.7
 pybind11==2.5.0
+pycares==4.4.0
 pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1593275161868/work
 pydantic==2.9.1
 pydantic-core==2.23.3
@@ -173,6 +178,7 @@ requests-oauthlib==1.3.0
 retrying==1.3.3
 rsa @ file:///home/conda/feedstock_root/build_artifacts/rsa_1591996208734/work
 s3transfer @ file:///home/conda/feedstock_root/build_artifacts/s3transfer_1608155435162/work
+schedule==1.2.2
 scikit-learn @ file:///D:/bld/scikit-learn_1605985921978/work
 scikit-surprise==1.1.1
 scipy @ file:///C:/ci/scipy_1592916963468/work
@@ -190,6 +196,7 @@ soupsieve @ file:///home/conda/feedstock_root/build_artifacts/soupsieve_15976805
 SQLAlchemy @ file:///D:/bld/sqlalchemy_1602395434487/work
 starlette==0.38.5
 statsmodels==0.14.1
+tabulate==0.9.0
 tensorboard==2.3.0
 tensorboard-plugin-wit==1.7.0
 tensorflow==2.3.1
@@ -214,6 +221,6 @@ wrapt==1.12.1
 xarray @ file:///home/conda/feedstock_root/build_artifacts/xarray_1600638299066/work
 xgboost==1.2.1
 xlrd @ file:///home/conda/feedstock_root/build_artifacts/xlrd_1595712200082/work
-yarl @ file:///D:/bld/yarl_1603108567357/work
+yarl==1.15.2
 your-package==1.0
 zipp @ file:///home/conda/feedstock_root/build_artifacts/zipp_1601765966131/work
