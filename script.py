@@ -321,7 +321,7 @@ def generate_report(rfm, comparison_table, output_html="notebooks/rfm_analysis_r
     """
     try:
         # Load the HTML template
-        with open("rfm_report_template.html", "r") as file:
+        with open("report_template.html", "r") as file:
             html_template = file.read()
 
         template = Template(html_template)
