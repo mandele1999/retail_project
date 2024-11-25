@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ report_title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: rgb(37, 127, 64); }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        img { display: block; margin: 20px auto; max-width: 800px; width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <!-- Dynamic Title -->
+    <h1>{{ report_title }}</h1>
+
+    <!-- Dynamic Overview Section -->
+    {% if overview %}
+    <h2>Overview</h2>
+    <p>{{ overview }}</p>
+    {% endif %}
+
+    <!-- Dynamic Section for Tables -->
+    {% if tables %}
+    {% for table in tables %}
+    <h2>{{ table.title }}</h2>
+    <table>
+        <tr>
+            {% for header in table.headers %}
+            <th>{{ header }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in table.rows %}
+        <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% endfor %}
+    {% endif %}
+
+    <!-- Dynamic Section for Plots -->
+    {% if plots %}
+    {% for plot in plots %}
+    <h2>{{ plot.title }}</h2>
+    <img src="{{ plot.path }}" alt="{{ plot.title }}">
+    {% endfor %}
+    {% endif %}
+
+    <!-- Dynamic Insights Section -->
+    {% if insights %}
+    <h2>Key Insights</h2>
+    <ul>
+        {% for insight in insights %}
+        <li>{{ insight }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <!-- Dynamic Recommendations Section -->
+    {% if recommendations %}
+    <h2>Recommendations</h2>
+    <ul>
+        {% for recommendation in recommendations %}
+        <li>{{ recommendation }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
