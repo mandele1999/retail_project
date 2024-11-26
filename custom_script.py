@@ -562,7 +562,7 @@ def plot_revenue_contribution(rfm, output_path, save=False):
 #==================================================================
 # 9. Save Results
 def save_rfm_results(rfm, output_path):
-    """Saves RFM analysis results to a file."""
+    """Saves RFM analysis(DataFrame:'rfm') results to a file."""
     try:
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         rfm.to_pickle(output_path)
@@ -571,7 +571,7 @@ def save_rfm_results(rfm, output_path):
         logging.error(f"Failed to save RFM results: {e}")
 
 def save_summary_table(data, output_path, mode="w"):
-    """Saves summary table to a text file."""
+    """Saves summary table(*CUSTOMER REVENUE CONTRIBUTION PROPORTION TABLE*) to a text file."""
     try:
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         with open(output_path, mode) as file:
@@ -587,14 +587,16 @@ def generate_report(rfm, summary_data, output_html="notebooks/rfm_analysis_repor
         template_path = "report_template.html"
         if not os.path.exists(template_path):
             raise FileNotFoundError(f"Template not found: {template_path}")
-        
+        # Open template
         with open(template_path, "r") as file:
             html_template = file.read()
 
+        # Prepare context to template
         template = Template(html_template)
         context = prepare_report_context(rfm, summary_data)
         rendered_html = template.render(context)
 
+        # Write out template and save in 'output_html' directory
         os.makedirs(os.path.dirname(output_html), exist_ok=True)
         with open(output_html, "w") as report_file:
             report_file.write(rendered_html)
@@ -609,7 +611,7 @@ def generate_report(rfm, summary_data, output_html="notebooks/rfm_analysis_repor
         logging.error(f"An error occurred while generating the report: {e}")
         
 #--------------------Prepare Report Context------------------
-
+# The Function Creates context for your report and returns a dictionary of relevant report content
 def prepare_report_context(rfm, summary_data):
     # Overview text
     overview = """
@@ -629,23 +631,22 @@ def prepare_report_context(rfm, summary_data):
 
     # Recommendations based on insights
     recommendations = [
-        "aaaaaStrengthening relationships with champions...",
+        "Strengthening relationships with champions...",
         "Nurture loyal customers and potential loyalists...",
         "Re-engage At Risk customers...",
         "Optimize efforts for hibernating customers...",
         "Monitor and track performance..."
     ]
-
-    # Convert summary_data to dictionary for HTML rendering
     segment_revenue_dict = summary_data[["RFM Customer Segment", "Revenue Contribution"]].to_dict(orient="records")
+    # # Convert summary_data to dictionary for HTML rendering    _____________________(ISSUE NOTED)________________________
+    # summary_data[["RFM Customer Segment", "Customer Proportion", "Revenue Contribution"]].to_dict(orient="records")
 
     # Prepare the context dictionary
     context = {
         "overview": overview,
         "insights": insights,
         "recommendations": recommendations,
-        "segment_revenue": summary_data,  # Full DataFrame for analysis/plotting
-        "segment_revenue_dict": segment_revenue_dict,  # For report rendering
+        "segment_revenue": segment_revenue_dict,  # Full DataFrame for analysis/plotting
         # Add image paths relative to the report's location
         "plot_revenue": "images/revenue_contribution.png",
         "plot_segments": "images/rfm_segments_comparison.png",
@@ -683,19 +684,12 @@ def main(data_path, output_pkl, summary_txt, report_html="../notebooks/rfm_analy
         save_rfm_results(rfm, output_pkl)
         logging.info(f"RFM results saved to {output_pkl}")
         
-        # Prepare summary data for context and table
-        summary_data = rfm.groupby("RFM Customer Segment").agg(
-            Customers=("CustomerID", "count"),
-            Revenue=("Monetary", "sum")
-        ).reset_index()
+        # Prepare summary data
+        summary_data = rfm.groupby("RFM Customer Segment").agg(Customers=("CustomerID", "count"),Revenue=("Monetary", "sum")).reset_index()
         total_customers = summary_data["Customers"].sum()
         total_revenue = summary_data["Revenue"].sum()
-        summary_data["Customer Proportion"] = (
-            summary_data["Customers"] / total_customers * 100
-        ).round(2).astype(str) + "%"
-        summary_data["Revenue Contribution"] = (
-            summary_data["Revenue"] / total_revenue * 100
-        ).round(2).astype(str) + "%"
+        summary_data["Customer Proportion"] = (summary_data["Customers"] / total_customers * 100).round(2).astype(str) + "%"
+        summary_data["Revenue Contribution"] = (summary_data["Revenue"] / total_revenue * 100).round(2).astype(str) + "%"
         
         # Generate and save summary table
         summary_table = tabulate(
@@ -705,7 +699,7 @@ def main(data_path, output_pkl, summary_txt, report_html="../notebooks/rfm_analy
         )
         save_summary_table(summary_table, summary_txt)
         
-        # Generate plots
+        # Generate plots (Plot:Path pairs)
         plot_paths = {
             "value_segment": "images/rfm_value_segment_dist.png",
             "behavioral_segment": "images/rfm_segments_comparison.png",
